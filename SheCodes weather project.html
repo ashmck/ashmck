@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    h1 {
+      color: #1a64d6;
+      text-align: center;
+      font-size: 34px;
+      line-height: 48px;
+      margin: 0 auto;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h2 {
+     margin: 0;
+     font-size: 34px;
+     line-height: 48px;
+     font-weight: 400;
+     text-align: center;
+     font-family: Arial, Helvetica, sans-serif;
+    }
+   
+    h3{
+        text-align:center;
+        font-family: Arial, Helvetica, sans-serif;
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+  
+    button{
+    display: block;
+    margin: 20px auto;
+    border: 1px solid #1a64d6;
+    background: #1a64d6;
+    color: #fff;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 16px 24px;
+    border-radius: 30px;
+    transition: all 200ms ease;
+    box-shadow: rgb(37 39 89 / 8%) 0px 8px 8px 0;
+    cursor: pointer;
+    }
+    button:hover{
+        cursor: pointer;
+        background:white;
+        color: #1a64d6;
+    }
+  
+    li:hover{
+    background: #FFFBEF;
+    background-size: 200px;
+    }
+    ul{
+        padding-inline-start: 500px;
+        padding-inline-end: 500px;
+        margin: 0;
+    }
+    p{
+    font-size: 18px;
+    opacity: 0.7;
+    text-align: center;
+    font-family: monospace;
+    }
+    .block{
+list-style: none;
+padding-top: 20px;
+padding-bottom: 20px;
+    }
+  </style>
+  <body>
+    <h1>
+      🌤 <br />
+      Currently 21° in Tokyo
+    </h1>
+    <h2>
+      13° / <strong> 23°</strong></span>
+    </h2>
+    <br />
+    <ul>
+        
+      <li class="block">
+        <h3>🌧 Tomorrow</h3>
+      <p>10° / <strong> 22°</strong></p>
+    </li>
+      
+      <li class="block">
+        <h3>🌥 Saturday</h3>
+      <p>15° / <strong> 17°</strong></p>
+    </li> 
+      
+      
+      <li class="block">
+        <h3>☀️ Sunday</h3>
+      <p>25° / <strong> 28°</strong></p>
+    </li>
+      
+    </ul>
+    <br />
+    <button>Change city</button>
+    <br />
+    <p>Coded by Ashleigh McKenna</p>
+  </body>
+  <script>
+     function updateheading(newheading) {
+        let h1 = document.querySelector("h1");
+        h1.innerHTML = newheading;
+      }
+
+
+    function changecity(){
+      let city = prompt("What city is it?");
+      let temperature = prompt("What is the temperature?");
+        updateheading(`Currently, ${temperature}°C in ${city}!`);
+      if (temperature>= 0){
+      updateheading(`😃<br/> Currently, ${temperature}°C in ${city}!`);
+      }else{
+        updateheading(`😟 Currently, ${temperature}°C in ${city}!`);
+      }
+
+    }
+    let contactButton = document.querySelector("button");
+      contactButton.addEventListener("click", changecity);
+    
+  </script>
+</html>
